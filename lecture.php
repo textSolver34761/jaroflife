@@ -7,14 +7,9 @@ try
 }
 
 $reponse = $bdd->query("SELECT * FROM tache");
-while($donnees = $reponse->fetch());
+while($donnees = $reponse->fetch())
 {
-?>
-    <p>
-        <strong> Nom de la tâche </strong>:<?php echo $donnees ['Label']; ?>
-    </p>
-<?php
+        echo $donnees ['Label'].'<br>';
 }
 $reponse->closeCursor();
-
 ?>

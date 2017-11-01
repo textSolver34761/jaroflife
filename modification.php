@@ -5,11 +5,12 @@ try
     } catch (Exception $e) {
         die ('Erreur : ' . $e->getMessage());   
 }
-$req = $bdd->prepare('UPDATE tache SET Label = :Label, Description = :Description, Priority = :Priority, Date = : Date WHERE Label = :Label');
+$req = $bdd->prepare('UPDATE tache SET Label = :nvLabel, Description = :nvDescription, Priority = :nvPriority, Date = : nvDate WHERE Label = :Label_tache');
 $req->execute(array(
-    'Label' => $Label,
-    'Description' => $Description,
-    'Priority' => $Priority,
-    'Date' => $Date
+    'nvLabel' => $nvLabel,
+    'nvDescription' => $nvDescription,
+    'nvPriority' => $nvPriority,
+    'nvDate' => $nvDate,
+    'Label_tache' => $Label_tache
 ));
 ?>
