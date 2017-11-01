@@ -1,19 +1,20 @@
 <?php //Lire la bdd
-$dsn = 'mysql:dbname=todo_project;host=localhost';
-$user = 'root';
-$password = ' ';
 try
 {
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo 'Connexion échouée : ' . $e->getMessage();   
+    $bdd = new PDO('mysql:host=localhost;dbname=todo_project', 'root', '');
+    } catch (Exception $e) {
+        die ('Erreur : ' . $e->getMessage());   
 }
 
-$sql = "SELECT * FROM tache Orderby Priority";
-$req = $pdo->query($sql);  
-while ($row = $req->fetch()) { 
-    echo $row['Label'];
+$reponse = $bdd->query("SELECT * FROM tache");
+while($donnees = $reponse->fetch());
+{
+?>
+    <p>
+        <strong> Nom de la tâche </strong>:<?php echo $donnees ['Label']; ?>
+    </p>
+<?php
 }
-$req->closeCursor();
+$reponse->closeCursor();
+
 ?>

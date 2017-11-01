@@ -16,19 +16,6 @@
         <br>
         <br>
         <h1>Modifiez votre todo liste:</h1>
-        <form action="" method="post">
-            <p>Label : <input type="text" name="Label" /></p>
-            <p>Description : <input type="textarea" name="Description" rows=25 cols=5 /></p>
-            <p>Priorité : <select name="Priority" size="1" />
-                        <option>important et urgent</option>
-                        <option>important et non-urgent</option>
-                        <option>urgent et non-important</option>
-                        <option>non-urgent et non-important</option>
-                        </select>
-            </p>
-            <p>Action prévue pour le: <input type="Date" name="Date"></p>
-            <p><input class="ui bif red button" type="submit" value="Modifier la todo liste" name="submit"></p>
-        </form>
         <br>
         <?php include('modification.php');?>
         <br>
