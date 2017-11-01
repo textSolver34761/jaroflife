@@ -1,0 +1,35 @@
+.right{
+    justify-content: flex-end;
+    display: inline-flex;
+    flex:2;
+}
+.left{
+    justify-content: flex-start;
+    display: inline-flex;
+    flex:2;
+}
+.boutton{
+    display: flex;
+}
+.center{
+    justify-content: center;
+    display: inline-flex;
+    flex:2;
+}
+.bgimg{
+    background-image: url(Muga_Diary.png);
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: black;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.center{
+    justify-content: center;
+    display: inline-flex;
+    flex:2;
+}
