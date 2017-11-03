@@ -17,7 +17,19 @@
         <br>
         <h1>Modifiez votre todo liste:</h1>
         <br>
-        <?php include('trash.php');?>
+        <?php //Supprimer des éléments à la bdd
+        try
+        {
+        require("config.php");
+            } catch (Exception $e) {
+                die ('Erreur : ' . $e->getMessage());   
+        }
+        $req = $bdd->prepare('DELETE FROM tache WHERE Label=:Label');
+        $req->execute(array(
+            'Label' => $Label
+        ));
+
+        ?>
         <br>
         <br>
         <?php include("pied_de_page.php");?>

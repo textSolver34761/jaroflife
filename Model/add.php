@@ -17,9 +17,9 @@
         <br>
         <h1>Ajoutez du contenu à votre todo liste:</h1>
         <form action="" method="post">
-            <p>Label : <input type="text" name="Label" /></p>
-            <p>Description : <input type="textarea" name="Description" rows=25 cols=5 /></p>
-            <p>Priorité : <select name="Priority" size="1" />
+            <p>title : <input type="text" name="Label" /></p>
+            <p>description : <input type="textarea" name="Description" rows=25 cols=5 /></p>
+            <p>Priority : <select name="Priority" size="1" />
                         <option>important et urgent</option>
                         <option>important et non-urgent</option>
                         <option>urgent et non-important</option>
@@ -30,7 +30,28 @@
             <p><input class="ui bif red button" type="submit" value="Modifier la todo liste" name="submit"></p>
         </form>
         <br>
-        <?php include('ajout.php');?>
+        <?php
+        try
+        {
+            require("config.php");
+            } catch (Exception $e) {
+                die ('Erreur : ' . $e->getMessage());   
+        }
+        if (isset($_POST["submit"])) {
+            try {
+                $sql = 'INSERT INTO tache(title, description, Priority, Date) VALUES(:title, :description, :Priority, :Date)';
+                $statement = $bdd->prepare($sql);
+                $statement->bindParam(':title', $_POST['title']);
+                $statement->bindParam(':description', $_POST['description']);
+                $statement->bindParam(':Priority', $_POST['Priority']);
+                $statement->bindParam(':Date', $_POST['Date']);
+                $statement->execute();
+                echo 'Vous avez bien ajouté une tâche!';
+        } catch (PDOException $e) {
+            echo 'Connexion échouée : ' . $e->getMessage();    
+        }
+        }
+        ?>
         <br>
         <br>
         <?php include("pied_de_page.php");?>

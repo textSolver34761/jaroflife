@@ -17,7 +17,22 @@
         <br>
         <h1>Modifiez votre todo liste:</h1>
         <br>
-        <?php include('modification.php');?>
+        <?php
+        try
+        {
+            require("config.php");
+            } catch (Exception $e) {
+                die ('Erreur : ' . $e->getMessage());   
+        }
+        $req = $bdd->prepare('UPDATE todo SET title = :nxtitle, description = :nxdescription, Priority = :nxPriority, Date = : nxDate WHERE title = :new_title');
+        $req->execute(array(
+            'nxtitle' => $nxtitle,
+            'nxdescription' => $nxdescription,
+            'nxPriority' => $nxPriority,
+            'nxDate' => $nxDate,
+            'new_title' => $new_title
+        ));
+        ?>
         <br>
         <br>
         <?php include("pied_de_page.php");?>

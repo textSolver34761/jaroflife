@@ -18,7 +18,21 @@
         <h1>Votre todo liste:</h1>
         <br>
         <br>
-        <?php include("lecture.php");?>
+        <?php
+        try
+        {
+            require("config.php");
+            } catch (Exception $e) {
+                die ('Erreur : ' . $e->getMessage());   
+        }
+
+        $reponse = $bdd->query("SELECT * FROM todo");
+        while($donnees = $reponse->fetch())
+        {
+                echo $donnees ['title'].'<br>';
+        }
+        $reponse->closeCursor();
+        ?>
         <br>
         <br>
         <?php include("pied_de_page.php");?>
