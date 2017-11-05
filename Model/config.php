@@ -1,1 +1,0 @@
-<php $bdd = new PDO('mysql:host=localhost;dbname=todo_project', 'root', '');?>

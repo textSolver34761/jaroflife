@@ -15,24 +15,18 @@
         <br>
         <br>
         <br>
-        <h1>Votre todo liste:</h1>
+        <h1>Modifiez votre todo liste:</h1>
         <br>
-        <br>
-        <?php
-        try
-        {
-            require("config.php");
-            } catch (Exception $e) {
-                die ('Erreur : ' . $e->getMessage());   
-        }
+        <form action="" method="post">
+        <div>
+            <label> Titre : <input type="text" name="title" value="<?php echo $tache['title']; ?>"> </label>
+        </div>
 
-        $reponse = $bdd->query("SELECT * FROM todo");
-        while($donnees = $reponse->fetch())
-        {
-                echo $donnees ['title'].'<br>';
-        }
-        $reponse->closeCursor();
-        ?>
+        <div>
+            <input type="submit" value="Supprimer l'élément de votre todo liste">
+        </div>
+    </form>
+        <?php include('trash.php');?>
         <br>
         <br>
         <?php include("pied_de_page.php");?>
