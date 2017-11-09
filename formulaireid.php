@@ -11,21 +11,16 @@
   <body>
     <div class="bgimg">
       <?php require __DIR__.'/entete.php';?>
-      <h1>todo-list</h1>
-      <ul>
-      <?php
-        foreach ($todosBrowse as $ligne) {
-      ?>
-        <li>
-            <?php echo $ligne['title'].'<br>'; ?>
-            <p><?php echo $ligne['description'].'<br>'; ?></p>
-            <p><?php echo $ligne['priority'].'<br>'; ?></p>
-            <p><?php echo $ligne['calendar'].'<br>'; ?></p>
-        </li>
-      <?php
-        }
-      ?>
-      </ul>
+      <h1>formulaire d'identification</h1>
+      <br>
+        <form action="./login.php" method="post">
+            <label="nom" name="login"> Login:</label>
+            <input type="texte" name="login"/>
+
+            <label="nom" name="password"> Password:</label>
+            <input type="texte" name="password"/>
+
+        </form>
       <?php require __DIR__.'/pied_de_page.php';?>
     </div>
   </body>
