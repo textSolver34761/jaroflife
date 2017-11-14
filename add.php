@@ -9,12 +9,12 @@ if (
     isset($_POST['priority']) OR
     isset($_POST['calendar'])
 ){
-    $success = add();
+    $todosadd = add();
 
     // si la création a réussi,
-    if ($success) {
+    if ($todosadd) {
         // rediriger vers
-        header('Location: /Vue/vue_add_apres_ajout.php');
+        header('location: read.php');
     }
 }
 else {

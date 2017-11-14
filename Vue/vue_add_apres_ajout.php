@@ -14,11 +14,8 @@
         <h1>Votre todo liste actualisée:</h1>
         <br>
         <?php
-        foreach($todosadd as $ligne){
+        foreach($todoread as $ligne){
             echo $ligne ['title']. '<br>';
-            echo $ligne ['description'] . '<br>';
-            echo $ligne ['priority']. '<br>';
-            echo $ligne ['calendar'] ;
         }
         ?>
         <br>

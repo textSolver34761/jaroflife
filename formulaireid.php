@@ -6,22 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="Style/semantic.css">
     <link rel="stylesheet" type="text/css" href="Style/style.css">
-    <title>Parcourir les todos</title>
+    <title>Formulaire</title>
   </head>
   <body>
     <div class="bgimg">
-      <?php require __DIR__.'/entete.php';?>
+      <?php require __DIR__.'/Vue/entete.php';?>
       <h1>formulaire d'identification</h1>
       <br>
-        <form action="./login.php" method="post">
-            <label="nom" name="login"> Login:</label>
-            <input type="texte" name="login"/>
-
-            <label="nom" name="password"> Password:</label>
-            <input type="texte" name="password"/>
+        <form action="login.php" method="post">
+            <label> Login:</label>
+            <input type="texte" name="login" placeholder="ex : Ben" required/>
+            <br>
+            <label> Password:</label>
+            <input type="password" name="password" required/>
+            <br>
+            <input type="submit" value="M'identifier">
 
         </form>
-      <?php require __DIR__.'/pied_de_page.php';?>
+      <?php require __DIR__.'/Vue/pied_de_page.php';?>
     </div>
   </body>
 </html>
