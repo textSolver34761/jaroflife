@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="bgimg">
-        <?php require __DIR__.'../Vue/entete.php';?>
+        <?php require __DIR__.'/entete.php';?>
         <br> 
         <br>
         <br>
@@ -18,29 +18,33 @@
         <h1>Modifiez votre todo liste:</h1>
         <br>
         <br>
-        <form action="" method="post">
+        <form action="edit.php" method="post">
             <div>
-                <label> Titre : <input type="text" name="title" value="<?php echo $tache['title']; ?>"> </label>
+                <label> Titre : </label>
+                <input type="text" name="title">
             </div>
 
             <div>
-                <label> Description : <textarea name="description"><?php echo $tache['description']; ?></textarea></label>
+                <label> Description :</label>
+                <textarea name="description"></textarea>
             </div>
 
             <div>
-                <label> Priorité : <input type="text" name="priority" value="<?php echo $tache['priority']; ?>"> </label>
+                <label> Priorité :  </label>
+                <input type="text" name="priority">
             </div>
 
             <div>
-                <label> Calendrier : <input type="text" name="calendar" value="<?php echo $tache['calendar']; ?>"> </label>
+                <label> Calendrier :  </label>
+                <input type="date" name="calendar">
             </div>
 
             <div>
-                <input type="submit" value="Modifier votre todo liste">
+                <input type="submit" value="Modifiez votre todo liste">
             </div>
         </form>
         <br>
-        <?php require __DIR__.'../Vue/pied_de_page.php';?>
+        <?php require __DIR__.'/pied_de_page.php';?>
     </div>
 </body>
 </html>

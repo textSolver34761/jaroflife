@@ -4,8 +4,10 @@
     </head>
             <body>
                 <form action="login.php" method="post">
-                    Votre login : <input type="text" name="login"> <br />
-                    Votre mot de passé : <input type="password" name="pwd"><br />
+                    <label>Votre login : </label>
+                    <input type="text" name="login"> <br>
+                    <label>Votre mot de passé :</label>
+                    <input type="password" name="pwd"><br>
                     <input type="submit" value="Connexion">
                 </form>
             </body>

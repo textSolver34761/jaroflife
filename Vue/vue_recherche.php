@@ -15,22 +15,20 @@
         <br>
         <br>
         <br>
-        <h1>Ce que vous avez modifiés:</h1>
+        <h1>Modifiez votre todo liste:</h1>
         <br>
         <br>
-        <ul>
-        <?php
-          foreach ($todosedit as $ligne) {
-        ?>
-          <li>
-              <?php echo $ligne['title']; ?>
-          </li>
-        <?php
-          }
-        ?>
-        </ul>
+        <form action="recherche.php" method="post">
+            <div>
+                <label> Titre : </label>
+                <input type="text" name="Chercher par titre">
+            </div>
+            <div>
+                <input type="submit" value="Cherchez un titre dans votre todo liste">
+            </div>
+        </form>
         <br>
-        <?php require __DIR__. '/pied_de_page.php';?>
+        <?php require __DIR__.'/pied_de_page.php';?>
     </div>
 </body>
 </html>
